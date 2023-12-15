@@ -70,9 +70,9 @@
     </select>
 
     <select name="localidad" id="provincia">
-        <option value="primero"></option>
-        <option value="segundo"></option>
-        <option value="tercero"></option>
+        <option value="primero" id="primero"></option>
+        <option value="segundo" id="segundo"></option>
+        <option value="tercero" id="tercero"></option>
     </select>
 
     <div id="imagenPueblo">
@@ -104,6 +104,19 @@
             let primero = document.getElementById("primero");
             let segundo = document.getElementById("segundo");
             let tercero = document.getElementById("tercero");
+
+            if(provincia.value="zgz"){
+                primero.innerText="1Zgz";
+                segundo.innerText="2Zgz";
+                tercero.innerText="3Zgz";
+
+            }else if(provincia.value="hsc"){
+
+            }else{
+                primero.innerText="1Teruel";
+                segundo.innerText="2Teruel";
+                tercero.innerText="3Teruel";
+            }
            
             
 
