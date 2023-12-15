@@ -7,10 +7,16 @@
     <title>Calculadora</title>
 
     <style>
+
+        body{
+            background-image: url('images/acelga.jpg');
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
     </style>
 </head>
 
-<body>
+<body id="cuerpo">
 
     <h1>Calculadora</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum laboriosam temporibus omnis, numquam
@@ -36,6 +42,10 @@
     <input class="button" type="button" value="Infierno" name="infierno" onclick="cambiarColor('red','black')">
     <input class="button" type="button" value="Desierto" name="desierto" onclick="cambiarColor('brown','#b6ab2f75')">
 
+    <input class="button" type="button" value="Velero" name="velero" onclick="cambiarFondo('velero_fondo.jpg')">
+    <input class="button" type="button" value="Tigre" name="tigre" onclick="cambiarFondo('tigre_fondo.jpg')">
+    <input class="button" type="button" value="Acelga" name="acelga" onclick="cambiarFondo('acelga.jpg')">
+
 
     <br><br>
 
@@ -50,7 +60,62 @@
     <input type="button" value="=" onclick="calcularSelect()">
     <input type="text" id="salidaIn">
 
+    <br>
+    <br>
+
+    <select name="provincia" id="provincia" onchange="seleccionarLocalidad()">
+        <option value="zgz">Zaragoza</option>
+        <option value="hsc">Huesca</option>
+        <option value="trl">Teruel</option>
+    </select>
+
+    <select name="localidad" id="provincia">
+        <option value="primero"></option>
+        <option value="segundo"></option>
+        <option value="tercero"></option>
+    </select>
+
+    <div id="imagenPueblo">
+        <img src="" alt="" id="imagenPueblo">
+    </div>
+
+
+    <input type="button" id="button" value="Boton">
+
+    <img src="images/yate_650_1200.jpg" alt="" onmouseover="agregaFuncion()">
+
+
+        
+   
+
+
     <script>
+        function agregaFuncion(){
+            let button = document.getElementById("button");
+
+            button.addEventListener("click", ()=>{
+                alert("Estoy agregando un evento");
+            })
+
+        }
+
+        function seleccionarLocalidad(){
+            let provincia = document.getElementById("provincia");
+            let primero = document.getElementById("primero");
+            let segundo = document.getElementById("segundo");
+            let tercero = document.getElementById("tercero");
+           
+            
+
+        }
+        function cambiarFondo(imagen){
+            let body = document.getElementById('cuerpo');
+
+            let ruta = 'images/';
+
+            body.style.backgroundImage = "url("+ruta+imagen+")";
+        }
+
         function cambiarColor( colorLetra, colorFondo){
             document.bgColor= colorFondo;
             document.fgColor = colorLetra;
@@ -72,7 +137,7 @@
 
             }else if(select=="multiplicar"){
                 resultado= num1 * num2;
-                
+
             }else{
                 resultado= num1 / num2;
             }
