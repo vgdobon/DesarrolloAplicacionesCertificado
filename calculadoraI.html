@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -7,8 +7,7 @@
     <title>Calculadora</title>
 
     <style>
-
-        body{
+        body {
             background-image: url('images/acelga.jpg');
             background-size: 100%;
             background-repeat: no-repeat;
@@ -46,7 +45,6 @@
     <input class="button" type="button" value="Tigre" name="tigre" onclick="cambiarFondo('tigre_fondo.jpg')">
     <input class="button" type="button" value="Acelga" name="acelga" onclick="cambiarFondo('acelga.jpg')">
 
-
     <br><br>
 
     <input type="text" id="numero1">
@@ -63,96 +61,145 @@
     <br>
     <br>
 
-    <select name="provincia" id="provincia" onchange="seleccionarLocalidad()">
+    <select name="provincia" id="provincia" onchange="seleccionarProvincia()">
         <option value="zgz">Zaragoza</option>
         <option value="hsc">Huesca</option>
         <option value="trl">Teruel</option>
     </select>
 
-    <select name="localidad" id="provincia">
-        <option value="primero" id="primero"></option>
-        <option value="segundo" id="segundo"></option>
-        <option value="tercero" id="tercero"></option>
+    <select name="localidad" id="localidad" onchange="seleccionarLocalidad()">
+        <option value="primero" id="primero">Calatayud</option>
+        <option value="segundo" id="segundo">Ejea de los Caballeros</option>
+        <option value="tercero" id="tercero">Tarazona</option>
     </select>
 
-    <div id="imagenPueblo">
-        <img src="" alt="" id="imagenPueblo">
+    <div id="imgDivPueblo">
+        <img src="images/Zaragoza.webp" width="400px" alt="" id="imagenPueblo">
     </div>
 
-
     <input type="button" id="button" value="Boton">
-
     <img src="images/yate_650_1200.jpg" alt="" onmouseover="agregaFuncion()">
-
-
-        
-   
-
-
     <script>
-        function agregaFuncion(){
+
+        let provincia="zgz";
+        let image =document.getElementById("imagenPueblo");
+
+        function agregaFuncion() {
             let button = document.getElementById("button");
 
-            button.addEventListener("click", ()=>{
+            button.addEventListener("click", () => {
                 alert("Estoy agregando un evento");
-            })
+            });
+
+            button.style.backgroundColor = "green";
+            button.style.color = "white";
 
         }
 
-        function seleccionarLocalidad(){
-            let provincia = document.getElementById("provincia");
+        // function setProvincia(provincia) {
+        //     provincia = provincia;
+        // }
+
+        function seleccionarLocalidad() {
+            let localidad = document.getElementById("localidad");
+
+            switch (provincia) {
+                case 'zgz':
+                    if (localidad.value == "primero") {
+                        image.src = "images/calatayud.jpg";
+                    } else if (localidad.value == "segundo") {
+                        image.src = "images/EJEA.jpg";
+                    } else {
+                        image.src = "images/tarazona.avif";
+                    }
+                    provincia="";
+                    break;
+
+                case 'hsc':
+                    if (localidad.value == "primero") {
+                        image.src = "images/Jaca.jpg";
+                    } else if (localidad.value == "segundo") {
+                        image.src = "images/monzon.jpg";
+                    } else {
+                        image.src = "images/binefar.jpg";
+                    }
+                    break;
+                case 'trl':
+                    if (localidad.value == "primero") {
+                        image.src = "images/Orrios.jpg";
+                    } else if (localidad.value == "segundo") {
+                        image.src = "images/libros.jpeg";
+                    } else {
+                        image.src = "images/moraderubielos.jpg";
+                    }
+                    break;
+            }
+
+
+
+        }
+
+        function seleccionarProvincia() {
+            let provinciaSelect = document.getElementById("provincia");
             let primero = document.getElementById("primero");
             let segundo = document.getElementById("segundo");
             let tercero = document.getElementById("tercero");
 
-            if(provincia.value="zgz"){
-                primero.innerText="1Zgz";
-                segundo.innerText="2Zgz";
-                tercero.innerText="3Zgz";
+            if (provinciaSelect.value == "zgz") {
+                primero.innerText = "Calatayud";
+                segundo.innerText = "Ejea de los Caballeros";
+                tercero.innerText = "Tarazona";
+                image.src = "images/Zaragoza.webp";
+                provincia="zgz";
 
-            }else if(provincia.value="hsc"){
-
-            }else{
-                primero.innerText="1Teruel";
-                segundo.innerText="2Teruel";
-                tercero.innerText="3Teruel";
+            } else if (provinciaSelect.value == "hsc") {
+                primero.innerText = "Jaca";
+                segundo.innerText = "Monzon";
+                tercero.innerText = "Binefar";
+                image.src  = "images/huesca.jpeg";
+                provincia="hsc";
+            } else {
+                primero.innerText = "Orrios";
+                segundo.innerText = "Libros";
+                tercero.innerText = "Mora de Rubielos";
+                image.src  = "images/teruel.jpg";
+                provincia="trl";
             }
-           
-            
-
         }
-        function cambiarFondo(imagen){
+
+
+        function cambiarFondo(imagen) {
             let body = document.getElementById('cuerpo');
 
             let ruta = 'images/';
 
-            body.style.backgroundImage = "url("+ruta+imagen+")";
+            body.style.backgroundImage = "url(" + ruta + imagen + ")";
         }
 
-        function cambiarColor( colorLetra, colorFondo){
-            document.bgColor= colorFondo;
+        function cambiarColor(colorLetra, colorFondo) {
+            document.bgColor = colorFondo;
             document.fgColor = colorLetra;
         }
 
-        function calcularSelect(){
+        function calcularSelect() {
             let num1 = parseInt(document.getElementById("numero1").value);
             let num2 = parseInt(document.getElementById("numero2").value);
             let select = document.getElementById("operador").value;
             let salida = document.getElementById("salidaIn");
 
-            let resultado=0;
+            let resultado = 0;
 
-            if(select=="sumar"){
-                resultado= num1 + num2;
+            if (select == "sumar") {
+                resultado = num1 + num2;
 
-            }else if(select=="restar"){
-                resultado= num1 - num2;
+            } else if (select == "restar") {
+                resultado = num1 - num2;
 
-            }else if(select=="multiplicar"){
-                resultado= num1 * num2;
+            } else if (select == "multiplicar") {
+                resultado = num1 * num2;
 
-            }else{
-                resultado= num1 / num2;
+            } else {
+                resultado = num1 / num2;
             }
 
             salida.value = resultado;
