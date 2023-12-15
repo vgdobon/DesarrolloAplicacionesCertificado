@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+
+<body>
+
+    <label for="num1">Dime un numero</label>
+    <input type="text" id="num1">
+    <label for="num2">Dime otro numero</label>
+    <input type="text" id="num2">
+
+    <input type="button" value="+" name="suma" onclick="calcular('+')">
+    <input type="button" value="-" name="resta" onclick="calcular('-')">
+    <input type="button" value="*" name="producto" onclick="calcular('*')">
+    <input type="button" value="/" name="division" onclick="calcular('/')">
+
+    <div id="salida"></div>
+
+    <script>
+        function calcular(operador) {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let salidaDiv = document.getElementById("salida");
+
+            console.log(num1, num2);
+            let resultado = 0;
+            let salida="";
+
+            if (operador == '+') {
+                resultado = num1 + num2;
+                salida= num1 + "+" + num2 + "=" + resultado;
+
+            } else if (operador == '-') {
+                resultado = num1 - num2;
+                salida= num1 + "-" + num2 + "=" + resultado;
+
+            } else if (operador == '*') {
+                resultado = num1 * num2;
+                salida= num1 + "*" + num2 + "=" + resultado;
+
+            } else {
+                resultado = num1/num2;
+                salida= num1 + "/" + num2 + "=" + resultado;
+            }
+
+            console.log(salida);
+            salidaDiv.innerText = salida;
+
+        }
+    </script>
+</body>
+
+</html>
