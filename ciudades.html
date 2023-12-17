@@ -17,12 +17,11 @@
             width: 100%;
             font-family: Arial, Helvetica, sans-serif;
             background-color: black;
-            padding-left: 35%;
+            padding-left: 40%;
             height: 38px;
         }
 
-        ul,
-        ol {
+        ul,ol {
             list-style: none;
         }
 
@@ -56,7 +55,7 @@
             margin: auto;
             margin-top: 50px;
             width: 80%;
-            height: 500px;
+            height: 400px;
         }
 
         #imagen {
@@ -82,7 +81,9 @@
                     <li><a href="#" id="segundo">Ejea de los Caballeros</a></li>
                     <li><a href="#" id="tercero">Tarazona</a></li>
                 </ul>
+
             </li>
+
         </ul>
     </div>
 
@@ -100,6 +101,8 @@
         let contenedorProvincias = document.querySelector("#provincias");
         let contenedorPueblos = document.querySelector("#pueblos");
 
+        const ruta = "./images/"
+
         let localicadActual = '';
 
         contenedorPueblos.addEventListener("click", (event) => {
@@ -107,7 +110,7 @@
         });
 
         contenedorProvincias.addEventListener("click", (event) => {
-            cambiarPueblos(event.target.id)
+            seleccionarLocalidad(event.target.id)
         });
 
         function seleccionarPueblo(pueblo) {
@@ -117,40 +120,41 @@
                 switch (pueblo) {
                     case 'primero':
 
-                        img.src = "images/calatayud.jpg";
+                        img.src = ruta + "calatayud.jpg";
                         break;
                     case 'segundo':
 
-                        img.src = "images/EJEA.jpg";
+                        img.src = ruta + "EJEA.jpg";
                         break;
                     case 'tercero':
-                        img.src = "images/tarazona.avif";
+
+                        img.src = ruta + "tarazona.avif";
                         break;
                 }
             } else if (localicadActual == 'hsc') {
                 switch (pueblo) {
                     case 'primero':
-                        img.src = "images/Jaca.jpg";
+                        img.src = ruta + "Jaca.jpg";
                         break;
                     case 'segundo':
-                        img.src = "images/monzon.jpg";
+                        img.src = ruta + "monzon.jpg";
                         break;
                     case 'tercero':
-                        img.src = "images/binefar.jpg";
+                        img.src = ruta + "binefar.jpg";
                         break;
                 }
             } else {
                 switch (pueblo) {
                     case 'primero':
-                        img.src = "images/Orrios.jpg";
+                        img.src = ruta + "Orrios.jpg";
                         break;
 
                     case 'segundo':
-                        img.src = "images/libros.jpeg";
+                        img.src = ruta + "libros.jpeg";
                         break;
 
                     case 'tercero':
-                        img.src = "images/moraderubielos.jpg";
+                        img.src = ruta + "moraderubielos.jpg";
                         break;
                 }
             }
@@ -158,7 +162,7 @@
 
 
 
-        function cambiarPueblos(localicad) {
+        function seleccionarLocalidad(localicad) {
 
             localicadActual = localicad;
 
