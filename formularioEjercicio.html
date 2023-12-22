@@ -45,6 +45,16 @@
             <label for="txtTel">Teléfono</label>
             <input type="tel" name="txtTlf" id="txtTlf" placeholder="+34..">
             <br>
+            <p>Dime tu edad:</p>
+            <input type="radio" name="rbtEdad" id="rbtJoven" value="joven" checked>
+            <label for="rbtJoven">Menos de 35</label><br>
+            <input type="radio" name="rbtEdad" id="rbtMaduro" value="maduro">
+            <label for="rbtMaduro">Mas de 35</label><br>
+            <input type="radio" name="rbtEdad" id="rbtExperto" value="experto">
+            <label for="rbtExperto">Más de 65</label>
+            <br>
+            <input type="button" value="Ver botón" onclick="verCategoria()">
+
 
         </fieldset>
         <label for="txtSeccion">Seccion:</label>
@@ -109,6 +119,21 @@
 
 
         // let alimentos = [fruta, carne, pescado];
+
+        function verCategoria(){
+            let eleccion = document.getElementsByName("rbtEdad");
+            
+            let valor="";
+
+            for (let i = 0; i < eleccion.length; i++) {
+                const element = eleccion[i];
+                if (element.checked) {
+                    valor= element.value;
+                }
+            }
+
+            alert(valor);
+        }
 
         function ponerNombre() {
             let seccion = document.getElementById("txtSeccion");
