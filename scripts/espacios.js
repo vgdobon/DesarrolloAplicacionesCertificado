@@ -29,3 +29,14 @@ function corregirPuntuacion(texto,puntuacion){
 
     return texto;
 }
+
+function corregirTextoGPT() {
+    // Obtén el valor del textarea
+    let textoOriginal = document.getElementById('texto').value; // Reemplaza 'miTextarea' con el ID real de tu textarea
+  
+    // Agrega un espacio después de cada punto o coma si no lo tiene
+    let textoCorregido = textoOriginal.replace(/([.,])(?!\s)/g, '$1 ');
+  
+    // Actualiza el valor del textarea con el texto corregido
+    document.getElementById('texto').value = textoCorregido; // Reemplaza 'miTextarea' con el ID real de tu textarea
+  }
