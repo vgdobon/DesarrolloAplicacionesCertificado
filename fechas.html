@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fechas</title>
+</head>
+<body>
+    
+    <h1>Trabajo con fechas</h1>
+    <input type="button" value="hoy" onclick="verHoy()">
+    <input type="button" value="Construir fechas" onclick="construirFecha()">
+    Elige una fecha <input type="date" name="fecha" id="fecha" onchange="mostarFecha()">
+
+
+    <p id="salida"></p>
+    <script>
+        function mostarFecha(){
+            alert(document.getElementById('fecha').value);
+        }
+
+        function construirFecha(){
+            let anyo = parseInt(prompt("Año:"));
+            let mes = parseInt(prompt("Mes:"));
+            let dia = parseInt(prompt("Día:"));
+            let hora = parseInt(prompt("Hora:"));
+            let minuto = parseInt(prompt("Minuto:"));
+            let segundo = parseInt(prompt("Segundo:"));
+
+            let date = new Date(anyo,mes-1,dia,hora,minuto,segundo);
+
+            document.getElementById('salida').innerHTML = date;
+            
+        }
+
+        function verHoy(){
+            let hoy = new Date();
+
+            document.getElementById('salida').innerHTML = hoy;
+        }
+    </script>
+</body>
+</html>
