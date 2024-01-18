@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de boligrafos</title>
+</head>
+
+<body>
+    <table>
+
+    </table>
+    <form action="">
+        <label for="tipos">Tipos</label>
+        <select name="tipos" id="tipos">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+        </select>
+
+        <label for="cantidad">Número de boligrafos:</label>
+        <input type="text" name="cantidad" id="cantidad">
+
+        <p>Trabajo especial</p>
+        <input type="radio" name="normal" id="normal" value="0">
+        <label for="normal">Sin trabajo especial</label>
+        <input type="radio" name="especial" id="seri" value="2">
+        <label for="seri">Serigrafiado</label>
+        <input type="radio" name="especial" id="troque" value="3">
+        <label for="troque">Troquelado</label>
+        <input type="radio" name="especial" id="seriTroque" value="5">
+        <label for="seriTroque">Serigrafiado + Troquelado</label>
+        <br>
+        <input type="checkbox" name="pedidoNuevo" id="pedidoNuevo">
+        <label for="pedidoNuevo">Pedido nuevo</label>
+
+        <input type="submit" value="Calcular" onclick="calcular()">
+    </form>
+
+
+    <div id="salida"></div>
+
+    <script>
+
+
+
+        function calcular() {
+            let tipo = document.getElementById("tipos").value;
+            let cantidad = document.getElementById("cantidad").value;
+            let especial = document.querySelector('input[name="especial"]:checked').value;
+            let nuevo = false;
+            let precioTotal=0;
+
+            if(document.getElementById("pedidoNuevo").checked){
+                nuevo = true;
+            }
+
+
+            console.log();
+
+            if((especial=="2" || especial=="3" || especial==5) && nuevo){
+                precioTotal+=120;
+            }
+            
+
+            switch (especial) {
+                case '2':
+                    precioTotal+= cantidad * 2;
+                    break;
+                case '3':
+                    precioTotal += cantidad * 3;
+                    break;
+                case '5':
+                    precioTotal += cantidad * 5;
+                    break;
+
+            }
+
+            switch (tipo) {
+                case '1':
+                    precioTotal += cantidad * 9;
+                    break;
+                case '2':
+                precioTotal += cantidad * 12;
+                    break;
+                case '3':
+                precioTotal += cantidad * 15;
+                    break;
+                case '4':
+                precioTotal += cantidad * 18;
+                    break;
+            }
+
+
+            document.getElementById("salida").innerHTML = precioTotal;
+
+
+
+
+        }
+    </script>
+</body>
+
+</html>
