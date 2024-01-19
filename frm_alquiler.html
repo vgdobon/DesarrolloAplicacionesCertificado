@@ -94,6 +94,59 @@
     </form>
 
     <div id="salida"></div>
+    <table>
+        <tr>
+            <th>Importe Base</th>
+            <td id="iBase"></td>
+        </tr>
+        <tr>
+            <th>Nº de kilometros</th>
+            <td id="nKm"></td>
+        </tr>
+        <tr></tr>
+        <th>Precio Kilómetros</th>
+        <td id="precioKm"></td>
+        </tr>
+        <tr>
+            <th>Total Km</th>
+            <td id="totalKm"></td>
+        </tr>
+        <tr>
+            <th>Días</th>
+            <td id="dias"></td>
+        </tr>
+        <tr>
+            <th>Precio Seguro</th>
+            <td id="precioSeguro"></td>
+        </tr>
+        <tr>
+            <th>Total Seguro</th>
+            <td id="totalSeguro"></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr>
+            <th>Subtotal</th>
+            <td id="subTotal"></td>
+        </tr>
+        <tr>
+            <th><span id="pcDescuento"></span> Descuento</th>
+            <td id="descuento"></td>
+        </tr>
+        <tr>
+            <th>Base Imponible</th>
+            <td id="baseImposible"></td>
+        </tr>
+        <tr>
+            <th>IVA 21%</th>
+            <td id="iva"></td>
+        </tr>
+        <tr>
+            <th>A PAGAR</th>
+            <td id="total"></td>
+        </tr>
+    </table>
 
     <script>
 
@@ -152,8 +205,9 @@
             let nombreClienteDevolver = document.getElementById("nombreClienteDevolver").value;
             let kmActuales = document.getElementById("kmNuevos").value;
             let fechaFinal = new Date(document.getElementById("fechaFinal").value);
+
             let coste;
-            
+
             let clienteActual = [];
             console.log(clienteActual);
 
@@ -174,98 +228,109 @@
                 calcular(clienteActual);
             }
 
+        }
+        function calcular(clienteActual) {
+            let diasUtilizados = 0;
+            let diferenciaKm = 0;
+            let cocheUtilizado = [];
+            let select = document.getElementById("tipo");
+            let nombreClienteDevolver = document.getElementById("nombreClienteDevolver").value;
+            let cbDescuento = document.getElementById("descuento").checked;
 
-            function calcular(clienteActual) {
-                let diasUtilizados = 0;
-                let diferenciaKm = 0;
-                let cocheUtilizado = [];
-                let select = document.getElementById("tipo");
-                let nombreClienteDevolver = document.getElementById("nombreClienteDevolver").value;
+            switch (clienteActual[1]) {
+                case '1':
+                    cocheUtilizado = vehiculoFurgoneta;
+                    break;
+                case '2':
+                    cocheUtilizado = vehiculoTurismo;
+                    break;
+                case '3':
+                    cocheUtilizado = vehiculoMonovolumen;
+                    break;
+                case '4':
+                    cocheUtilizado = vehiculoTodoterreno;
+                    break;
+            }
 
-                switch (clienteActual[1]) {
-                    case '1':
-                        cocheUtilizado = vehiculoFurgoneta;
-                        break;
-                    case '2':
-                        cocheUtilizado = vehiculoTurismo;
-                        break;
-                    case '3':
-                        cocheUtilizado = vehiculoMonovolumen;
-                        break;
-                    case '4':
-                        cocheUtilizado = vehiculoTodoterreno;
-                        break;
-                }
+            diferenciaKm = clienteActual[5] - cocheUtilizado[0];
+            console.log("diferencia Km: " + diferenciaKm);
+            cocheUtilizado[0] = clienteActual[5];
+            let nuevoNodo = document.createElement('option');
+            let opcionVehiculo = '';
+            let descuento;
 
-                diferenciaKm = clienteActual[5] - cocheUtilizado[0];
-                console.log("diferencia Km: " + diferenciaKm);
-                cocheUtilizado[0] = clienteActual[5];
-                let nuevoNodo = document.createElement('option');
-                let opcionVehiculo = '';
+            switch (clienteActual[1]) {
+                case '1':
+                    nuevoNodo.innerHTML = 'Furgoneta';
+                    nuevoNodo.value = '1';
+                    nuevoNodo.id = "furgoneta";
+                    libre1.innerHTML = "Libre";
+                    opcionVehiculo = 'Furgoneta';
+                    break;
+                case '2':
+                    nuevoNodo.innerHTML = 'Turismo';
+                    nuevoNodo.value = '2';
+                    nuevoNodo.id = "turismo";
+                    libre2.innerHTML = "Libre";
+                    opcionVehiculo = 'Turismo';
+                    break;
+                case '3':
+                    nuevoNodo.innerHTML = 'Monovolumen';
+                    nuevoNodo.value = '3';
+                    nuevoNodo.id = "monovolumen";
+                    libre3.innerHTML = "Libre";
+                    opcionVehiculo = 'Monovolumen';
+                    break;
+                case '4':
+                    nuevoNodo.innerHTML = 'Todoterreno';
+                    nuevoNodo.value = '4';
+                    nuevoNodo.id = "todoterreno";
+                    libre4.innerHTML = "Libre";
+                    opcionVehiculo = 'Todoterreno';
+                    break;
+            }
 
-                switch (clienteActual[1]) {
-                    case '1':
-                        nuevoNodo.innerHTML = 'Furgoneta';
-                        nuevoNodo.value = '1';
-                        nuevoNodo.id = "furgoneta";
-                        libre1.innerHTML = "Libre";
-                        opcionVehiculo = 'Furgoneta';
-                        break;
-                    case '2':
-                        nuevoNodo.innerHTML = 'Turismo';
-                        nuevoNodo.value = '2';
-                        nuevoNodo.id = "turismo";
-                        libre2.innerHTML = "Libre";
-                        opcionVehiculo = 'Turismo';
-                        break;
-                    case '3':
-                        nuevoNodo.innerHTML = 'Monovolumen';
-                        nuevoNodo.value = '3';
-                        nuevoNodo.id = "monovolumen";
-                        libre3.innerHTML = "Libre";
-                        opcionVehiculo = 'Monovolumen';
-                        break;
-                    case '4':
-                        nuevoNodo.innerHTML = 'Todoterreno';
-                        nuevoNodo.value = '4';
-                        nuevoNodo.id = "todoterreno";
-                        libre4.innerHTML = "Libre";
-                        opcionVehiculo = 'Todoterreno';
-                        break;
-                }
-
-                select.appendChild(nuevoNodo);
-
-
-                diasUtilizados = clienteActual[4].getTime() - clienteActual[3].getTime();
-                console.log(diasUtilizados);
-
-                diasUtilizados = parseInt((((diasUtilizados / 1000) / 60) / 60 )/ 24);
-
-                coste  = diferenciaKm * cocheUtilizado[1];
-                
-                if(clienteActual[2] == 'A'){
-                    coste += diasUtilizados * cocheUtilizado[2];
-                }else{
-                    coste += diasUtilizados * cocheUtilizado[3];
-                }
-
-                document.getElementById('salida').innerHTML = "Vehiculo utilzado: " + opcionVehiculo + "\n" +
-                                                              "Dias usados: " + diasUtilizados + "\n" +
-                                                              "Seguro: " + clienteActual[2] + "\n" +
-                                                              "Total: " + coste + "€";
+            select.appendChild(nuevoNodo);
 
 
-                for (let index = 0; index < clientesActuales.length; index++) {
-                    const element = clientesActuales[index];
-                    if(element[0] == nombreClienteDevolver){
-                        clientesActuales.splice(index,1);
-                    }
-                    
+            diasUtilizados = clienteActual[4].getTime() - clienteActual[3].getTime();
+            console.log(diasUtilizados);
+
+            diasUtilizados = parseInt((((diasUtilizados / 1000) / 60) / 60) / 24);
+
+            coste = diferenciaKm * cocheUtilizado[1];
+
+            if (clienteActual[2] == 'A') {
+                coste += diasUtilizados * cocheUtilizado[2];
+            } else {
+                coste += diasUtilizados * cocheUtilizado[3];
+            }
+
+
+            if (cbDescuento) {
+                coste -= coste * 0, 21;
+            }
+
+            document.getElementById('salida').innerHTML = "Vehiculo utilzado: " + opcionVehiculo + "\n" +
+                "Dias usados: " + diasUtilizados + "\n" +
+                "Seguro: " + clienteActual[2] + "\n" +
+                "Total: " + coste + "€";
+
+
+
+
+            for (let index = 0; index < clientesActuales.length; index++) {
+                const element = clientesActuales[index];
+                if (element[0] == nombreClienteDevolver) {
+                    clientesActuales.splice(index, 1);
                 }
 
             }
+
+            document.getElementById("iBase").innerHTML = 
+
         }
+
 
     </script>
 
