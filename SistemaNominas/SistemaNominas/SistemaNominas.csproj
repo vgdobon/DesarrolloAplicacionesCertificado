@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{689D14B3-4FFB-4A4B-999E-F446EA423A45}</ProjectGuid>
+    <ProjectGuid>{BE7EB21B-C9B9-4AAA-AB0A-06010937E9AD}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Zoologico2</RootNamespace>
-    <AssemblyName>Zoologico2</AssemblyName>
+    <RootNamespace>SistemaNominas</RootNamespace>
+    <AssemblyName>SistemaNominas</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animal.cs" />
-    <Compile Include="Cuidador.cs" />
+    <Compile Include="Empleado.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
