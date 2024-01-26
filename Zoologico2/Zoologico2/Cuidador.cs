@@ -12,7 +12,6 @@ namespace Zoologico2
         public String Apellido { get; set; }
         public double SueldoHora;
 
-
         public Boolean Fijo { get; set; }
 
         public Cuidador(string nombre, string apellido, double sueldoHora, bool fijo)
@@ -41,6 +40,11 @@ namespace Zoologico2
         public double Cobrar(int horasTrabajadas)
         {
             return horasTrabajadas * SueldoHora;
+        }
+
+        public String DarComida ( string comida, Animal animal)
+        {
+            return this.Nombre + " le está dando " + comida + " al " + animal.Especie + " " + animal.GetNombre();
         }
     }
 }

@@ -9,26 +9,33 @@ namespace Zoologico2
     public class Animal
     {
 
+        private static int NumAnimales;
+
         private String Nombre;
 
         public String Especie { get; set; }
 
         public String Color { get; set; }
 
-        public int Edad
+
+        public static int getNumAnimales()
         {
-            get { return this.Edad; }
+            return NumAnimales;
+        }
+
+        private int edad;
+        public int Edad { 
+            get { return this.edad; }
             set
             {
-                if (value > 20 || value < 0)
-                {
-                    Edad = 0;
-                }
-                else
-                {
-                    Edad = value;
-                }
-            } }
+                this.edad = value < 0 || value > 200 ? 0 : value; 
+            }
+        }
+
+        public void ContarNuevoAnimal()
+        {
+            NumAnimales++;
+        }
 
         public Boolean TieneHambre {  get; set; }
 
@@ -36,6 +43,7 @@ namespace Zoologico2
         {
             Nombre = nombre ?? throw new ArgumentNullException(nameof(nombre));
             Especie = especie ?? throw new ArgumentNullException(nameof(especie));
+            ContarNuevoAnimal();
         }
 
         public Animal(string nombre, string especie, string color, int edad, bool tieneHambre)
@@ -43,8 +51,9 @@ namespace Zoologico2
             Nombre = nombre;
             Especie = especie;
             Color = color;
-            Edad = edad;
+            this.Edad=edad;
             TieneHambre = tieneHambre;
+            ContarNuevoAnimal();
         }
 
         public String GetNombre()
@@ -62,9 +71,9 @@ namespace Zoologico2
             Console.WriteLine("El/la " + Especie + " " + Nombre + " lleva durmiendo " + " " +  horas + " horas");
         }
 
-        public void Comer(String comida)
+        public String Comer(String comida)
         {
-            Console.WriteLine("El/la " + Especie + " " + Nombre + " está comiendo " + comida + ".");
+            return "El/la " + this.Especie + " " + this.Nombre + " está comiendo " + comida + ".";
         }
     }
 }

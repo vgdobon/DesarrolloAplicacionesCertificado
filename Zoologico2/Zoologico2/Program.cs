@@ -12,6 +12,9 @@ namespace Zoologico2
         static void Main(string[] args)
         {
             Cuidador paco = new Cuidador("Paco", "Martinez", 20.5, true);
+            paco.Nombre = "Francisco";
+            paco.Apellido = "Martínez";
+            paco.SueldoHora = 21;
             Animal juancho = new Animal("Juancho","burro","Marrón",10,true);
 
             juancho.Dormir(10);
@@ -21,9 +24,18 @@ namespace Zoologico2
 
             Console.WriteLine(paco.Nombre + " va a cobrar este mes: " + paco.Cobrar(160) + " \u20AC.");
 
-            Animal animal = new Animal(null,null);
+            Animal animal = new Animal("Ramiro","Buitre","Marron",4,true);
+            Animal ani = new Animal("Perico","Periquito","verde",2,true);
+
+            animal.Dormir(10);
+
+            Console.WriteLine(animal.Comer("coyote"));
+
+            //Console.WriteLine(paco.DarComida("paja", juancho));
 
             Console.WriteLine(animal);
+
+            Console.WriteLine("Tenemos " + Animal.getNumAnimales() + " animales en nuestro zoo.");
 
             Console.ReadLine();
         }

@@ -26,8 +26,9 @@ namespace CalculadoraRacional
 
             String fraccion2 = Console.ReadLine();
 
-            Calculadora.Operar(fraccion1, fraccion2, operador);
+            Console.WriteLine(Calculadora.Operar(fraccion1, fraccion2, operador));
 
+  
 
             Console.ReadLine();
         }
