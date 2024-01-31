@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Profesor\\DesarrolloAplicacionesCertificado\\AplicacionExcritorio\\AplicacionExcritorio\\AplicacionExcritorio.csproj",
+      "projectUniqueName": "C:\\Users\\Profesor\\Documents\\GitHub\\DesarrolloAplicacionesCertificado\\AplicacionExcritorio\\AplicacionExcritorio\\AplicacionExcritorio.csproj",
       "projectName": "AplicacionExcritorio",
-      "projectPath": "C:\\Users\\Profesor\\DesarrolloAplicacionesCertificado\\AplicacionExcritorio\\AplicacionExcritorio\\AplicacionExcritorio.csproj",
+      "projectPath": "C:\\Users\\Profesor\\Documents\\GitHub\\DesarrolloAplicacionesCertificado\\AplicacionExcritorio\\AplicacionExcritorio\\AplicacionExcritorio.csproj",
       "packagesPath": "C:\\Users\\Profesor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Profesor\\DesarrolloAplicacionesCertificado\\AplicacionExcritorio\\AplicacionExcritorio\\obj\\",
+      "outputPath": "C:\\Users\\Profesor\\Documents\\GitHub\\DesarrolloAplicacionesCertificado\\AplicacionExcritorio\\AplicacionExcritorio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
