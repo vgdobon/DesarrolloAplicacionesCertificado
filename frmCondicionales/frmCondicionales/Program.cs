@@ -16,7 +16,7 @@ namespace frmCondicionales
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new frmDado());
+			Application.Run(new JuegosDadosForm());
 		}
 	}
 }

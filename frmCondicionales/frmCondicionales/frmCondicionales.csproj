@@ -58,6 +58,12 @@
     <Compile Include="frmDado.Designer.cs">
       <DependentUpon>frmDado.cs</DependentUpon>
     </Compile>
+    <Compile Include="JuegosDadosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JuegosDadosForm.Designer.cs">
+      <DependentUpon>JuegosDadosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -65,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDado.resx">
       <DependentUpon>frmDado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JuegosDadosForm.resx">
+      <DependentUpon>JuegosDadosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

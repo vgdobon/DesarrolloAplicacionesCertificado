@@ -20,7 +20,7 @@ namespace frmCondicionales
 		private void btnLaunch_Click(object sender, EventArgs e)
 		{
 			Random random = new Random();
-			int tirada = random.Next(7);
+			int tirada = random.Next(6);
 
 			Image[] images = new Image[6];
 			images[0] = new Bitmap(Properties.Resources.dado1);
@@ -30,11 +30,8 @@ namespace frmCondicionales
 			images[4] = new Bitmap(Properties.Resources.dado5);
 			images[5] = new Bitmap(Properties.Resources.dado6);
 
-			
-
-
 			pictBoxDado.SizeMode = PictureBoxSizeMode.StretchImage;
-			pictBoxDado.Image = images[tirada - 1];
+			pictBoxDado.Image = images[tirada];
 
 		}
 	}

@@ -9,3 +9,4 @@ C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicio
 C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.exe
 C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.pdb
 C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.frmDado.resources
+C:\Users\Profesor\Documents\GitHub\DesarrolloAplicacionesCertificado\frmCondicionales\frmCondicionales\obj\Debug\frmCondicionales.JuegosDadosForm.resources
