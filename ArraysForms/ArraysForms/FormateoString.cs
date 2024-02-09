@@ -160,8 +160,8 @@ namespace ArraysForms
 		{
 			String[] strings = txtCodigoArticulo.Text.Split('/');
 			String prenda = this.ropa[strings[0]];
-			String talla = this.talla[strings[1]];
-			String color = this.color[strings[2]];
+			String talla = this.talla[strings[2]];
+			String color = this.color[strings[1]];
 
 			lblSalidaArticulo.Text = "Has comprado un " + prenda + " de talla " + talla + " y color " + color;
 		}
