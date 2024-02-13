@@ -35,10 +35,10 @@ namespace PrimerProyecto
 				return;
 			}
 
-			int suma = num1 + num2;
-			int resta = num1 - num2;
-			double multiplicacion = (Convert.ToDouble(num1) * Convert.ToDouble(num2));
-			double division = Convert.ToDouble(num1) / Convert.ToDouble(num2);
+			var suma = num1 + num2;
+			var resta = num1 - num2;
+			var multiplicacion = (Convert.ToDouble(num1) * Convert.ToDouble(num2));
+			var division = Convert.ToDouble(num1) / Convert.ToDouble(num2);
 
 			lblResultado.Text = 
 				"<br/>Suma: " + suma + "<br/>" +
@@ -67,11 +67,11 @@ namespace PrimerProyecto
 				frutas[i,1] = precio.ToString("N2");
 			}
 
-			for (int i = 0; i < frutas.GetLongLength(0); i++)
+			for (var i = 0; i < frutas.GetLongLength(0); i++)
 			{
-				TableRow r = new TableRow();
-				TableCell c1 = new TableCell();
-				TableCell c2 = new TableCell();
+				var r = new TableRow();
+				var c1 = new TableCell();
+				var c2 = new TableCell();
 				c1.Text = frutas[i,0];
 				c2.Text = frutas[i,1];
 				r.Cells.Add(c1);
