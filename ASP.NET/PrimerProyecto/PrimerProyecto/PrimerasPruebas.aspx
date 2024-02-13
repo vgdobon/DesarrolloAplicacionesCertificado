@@ -6,12 +6,7 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
-    <style type="text/css">
-        .auto-style1 {
-            height: 26px;
-        }
-    </style>
-</head>
+    </head>
 <body>
     <form id="form1" runat="server">
         <div style="height: 129px">
@@ -32,37 +27,16 @@
             <br />
             &nbsp;<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Frutas" />
             <br />
-            <br />
-            <table style="width: 100%;" ID="table1">
-                <tr>
-                    <th class="auto-style1">Fruta</th>
-                    <th class="auto-style">Precio</th>
-                </tr>
-                <tr>
-                    <td class="auto-style1" id="1"></td>
-                    <td class="auto-style1" id="1precio"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style1" id="2"></td>
-                    <td class="auto-style1" id="2precio"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style1" id="3"></td>
-                    <td class="auto-style1" id="3precio"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style1" id="4"></td>
-                    <td class="auto-style1" id="4precio"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style1" id="5"></td>
-                    <td class="auto-style1" id="5precio"></td>
-                </tr>
-                <tr>
-                    <td class="auto-style1" id="6"></td>
-                    <td class="auto-style1" id="6"></td>
-                </tr>
-            </table>
+            <asp:Table ID="Table2" runat="server" Height="218px" Width="543px">
+                <asp:TableRow>
+                <asp:TableCell>
+                    Frutas
+                </asp:TableCell>
+                <asp:TableCell>
+                    Precio
+                </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
             <br />
             <br />
         </div>

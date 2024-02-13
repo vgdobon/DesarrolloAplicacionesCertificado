@@ -57,51 +57,30 @@ namespace PrimerProyecto
 			frutas[3,0]="Melón";
 			frutas[4,0] ="Sandía";
 			frutas[5,0] ="Plátano";
+
 			Random rnd = new Random();
 
 
 			for (int i = 0; i < frutas.Length/2; i++)
 			{
-				double precio = rnd.Next(10);
+				double precio = rnd.Next(1,5);
 				frutas[i,1] = precio.ToString("N2");
 			}
 
-			ControlCollection col = form1.Controls;
-			Table tabla = col[14] as Table;
-			//buscar una celda en la tabla
-			//col.IndexOf
-			//Encontrar una cela en la pagina web html
-			TableCell cell = form1.FindControl("1") as TableCell;
+			for (int i = 0; i < frutas.GetLongLength(0); i++)
+			{
+				TableRow r = new TableRow();
+				TableCell c1 = new TableCell();
+				TableCell c2 = new TableCell();
+				c1.Text = frutas[i,0];
+				c2.Text = frutas[i,1];
+				r.Cells.Add(c1);
+				r.Cells.Add(c2);
+				Table2.Rows.Add(r);
+			}
 			
 
-			for (int i = 0; i < 1 ; i++)
-			{
-				String id= (i + 1).ToString();
-				String idPrecio = (i+1) + "precio";
-
-
-				
-
-				foreach(Control c in col)
-				{
-					if(c is HtmlTableCell)
-					{
-						HtmlTableCell hgc = (HtmlTableCell)c;
-						if(hgc.ID == id)
-						{
-							hgc.InnerHtml = frutas[i,0];
-						}
-						if(hgc.ID == idPrecio)
-						{
-							hgc.InnerHtml = frutas[i,1];
-						}
-					}
-				}
-
-
-
-
-			}
+			
 
 		}
 	}
