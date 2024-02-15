@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Fechas.aspx" />
+    <Content Include="frmFechas.aspx" />
     <Content Include="index.html" />
     <None Include="PrimerasPruebas.aspx" />
     <Content Include="Web.config" />
@@ -79,6 +80,13 @@
     </Compile>
     <Compile Include="Fechas.aspx.designer.cs">
       <DependentUpon>Fechas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frmFechas.aspx.cs">
+      <DependentUpon>frmFechas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frmFechas.aspx.designer.cs">
+      <DependentUpon>frmFechas.aspx</DependentUpon>
     </Compile>
     <Compile Include="PrimerasPruebas.aspx.cs">
       <DependentUpon>PrimerasPruebas.aspx</DependentUpon>
