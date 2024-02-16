@@ -26,9 +26,14 @@
             Convertir:
             <input type="text" runat="server" id="US"/>
             Dolares americanos a Euros.
+
+            <select runat="server" id="Currency">
+                
+            </select>
             <br />
             <br />
-            <input type="submit" value="Convertir" />
+            <input type="submit" value="Convertir"  id="btnConvertir" onserverclick="btnConvertir_ServerClick"
+                runat="server"/>
         </div>
     </form>
 </body>
