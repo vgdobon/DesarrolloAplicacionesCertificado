@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Camping.aspx" />
+    <Content Include="CheckBox.aspx" />
     <Content Include="frmBotones.aspx" />
     <Content Include="frmTrabajoTexto.aspx" />
     <Content Include="Images\ajosTiernos.jpg" />
@@ -76,6 +78,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Camping.aspx.cs">
+      <DependentUpon>Camping.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Camping.aspx.designer.cs">
+      <DependentUpon>Camping.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckBox.aspx.cs">
+      <DependentUpon>CheckBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckBox.aspx.designer.cs">
+      <DependentUpon>CheckBox.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frmBotones.aspx.cs">
       <DependentUpon>frmBotones.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
