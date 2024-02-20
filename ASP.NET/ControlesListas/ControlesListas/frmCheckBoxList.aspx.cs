@@ -113,8 +113,8 @@ namespace ControlesListas
 
 			foreach(char c in sb.ToString())
 			{
-				int pos = sb.Chars[c];
-				sb.Remove(pos, 0);
+				//int pos = sb.Chars[c];
+				//sb.Remove(pos, 0);
 			}
 
 
