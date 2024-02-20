@@ -59,24 +59,14 @@
                 </tr>
             </table>
             <br />
-            <asp:Table style="width: 100%;"  id="mytable" runat="server">
-                <tr>
-                    <td class="auto-style2">Alojamiento:</td>
-                    <td class="auto-style3">&nbsp;</td>
-                    <td>&nbsp;</td>
-                </tr>
-                <tr>
-                    <td class="auto-style2">
-                        <asp:RadioButton ID="RadioBtn" runat="server" GroupName="rdBtnTienda" OnCheckedChanged="Calcular_TextChanged" Text="Tienda Iglu" AutoPostBack="True" Checked="True" />
-                    </td>
-                    <td class="auto-style2">
-                        <asp:RadioButton ID="RadioButton2" runat="server" GroupName="rdBtnTienda" OnCheckedChanged="Calcular_TextChanged" Text="Tienda Familiar" AutoPostBack="True" />
-                    </td>
-                    <td class="auto-style2">
-                        <asp:RadioButton ID="RadioButton1" runat="server" GroupName="rdBtnTienda" OnCheckedChanged="Calcular_TextChanged" Text="Bungalow" AutoPostBack="True" />
-                    </td>
-                </tr>
-            </asp:Table>
+            
+            <p>
+                Alojamiento:
+            </p>
+            <asp:RadioButton ID="RadioBtn" runat="server" GroupName="rdBtnTienda" OnCheckedChanged="Calcular_TextChanged" Text="Tienda Iglu" AutoPostBack="True" Checked="True"></asp:RadioButton>
+            <asp:RadioButton ID="RadioButton2" runat="server" GroupName="rdBtnTienda" OnCheckedChanged="Calcular_TextChanged" Text="Tienda Familiar" AutoPostBack="True"></asp:RadioButton>
+            <asp:RadioButton ID="RadioButton1" runat="server" GroupName="rdBtnTienda" OnCheckedChanged="Calcular_TextChanged" Text="Bungalow" AutoPostBack="True"></asp:RadioButton>
+
 
             <p>
                 &nbsp;

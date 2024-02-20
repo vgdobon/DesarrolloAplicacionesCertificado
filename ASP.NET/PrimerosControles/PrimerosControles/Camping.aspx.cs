@@ -10,8 +10,8 @@ namespace PrimerosControles
 {
 	public partial class Camping : System.Web.UI.Page
 	{
-		Dictionary<string, double> diccionarioCosteAlojamiento;
-		Dictionary<string, double> diccionarioCosteExtra;
+		public Dictionary<string, double> diccionarioCosteAlojamiento { get; set; }
+		Dictionary<string, double> diccionarioCosteExtra { get; set; }
 
 
 		protected void Page_Load(object sender, EventArgs e)
@@ -23,7 +23,7 @@ namespace PrimerosControles
 				{ "Bungalow", 45 }
 			};
 
-			diccionarioCosteAlojamiento = new Dictionary<string, double>
+			diccionarioCosteExtra = new Dictionary<string, double>
 			{
 				{ "Toma de Luz", 2 },
 				{ "Agua caliente", 3 },
@@ -48,24 +48,23 @@ namespace PrimerosControles
 				tdDias.InnerText = dias.ToString();
 			}
 
-			if (dias != 0)
+			if (dias > 0)
 			{
 
-				List<RadioButton> radioButtons = mytable.Controls.OfType<RadioButton>().ToList();
-				RadioButton rbTarget = radioButtons
-					.Where(r => r.GroupName == "GroupName" && r.Checked)
-						.Single();
+
 				RadioButton radioButtonChecked = form1.Controls.OfType<RadioButton>()
-									  .FirstOrDefault(r => r.Checked);
+					.FirstOrDefault(r => r.GroupName== "rdBtnTienda" && r.Checked);
+				string tipoAlojamiento = radioButtonChecked.Text;
+
+				//form1.Controls.OfType<RadioButton>()
+				// .FirstOrDefault(r => r.Checked);
 				double costeAlojamiento = 0;
 
-				if ( radioButtonChecked != null)
-				{
-					costeAlojamiento = diccionarioCosteAlojamiento[radioButtonChecked.Text] * dias;
-					tdCostoAlojamiento.InnerText = costeAlojamiento.ToString();
-					tdTipoAlojamiento.InnerText = radioButtonChecked.Text;
-					tdCosteAlojamientoTotal.InnerText = costeAlojamiento.ToString();
-				}
+				costeAlojamiento = diccionarioCosteAlojamiento[tipoAlojamiento] * dias;
+				tdCostoAlojamiento.InnerText = costeAlojamiento.ToString();
+				tdTipoAlojamiento.InnerText = radioButtonChecked.Text;
+				tdCosteAlojamientoTotal.InnerText = costeAlojamiento.ToString();
+				
 
 
 
@@ -75,7 +74,7 @@ namespace PrimerosControles
 
 				foreach (System.Web.UI.WebControls.CheckBox c in form1.Controls.OfType<System.Web.UI.WebControls.CheckBox>())
 				{
-					if (c.Checked)
+					if (c.Checked && diccionarioCosteExtra.ContainsKey(c.Text))
 					{
 						checkedButtons.Add(c.Text);
 					}
@@ -98,7 +97,7 @@ namespace PrimerosControles
 					
 					}
 
-					if (item == "Toma de Luz caliente")
+					if (item == "Toma de Luz")
 					{
 						tdTomaLuz.InnerText = Convert.ToString(coste * dias);
 
@@ -119,5 +118,7 @@ namespace PrimerosControles
 
 
 		}
+
+		
 	}
 }

@@ -69,9 +69,11 @@ namespace ControlesListas
 		{
 			System.Web.UI.WebControls.BulletedList b =
 				(System.Web.UI.WebControls.BulletedList)sender;
-			LinkButton lb = b.Controls[e.Index].Controls[0] as LinkButton;
 
-			Page.Response.Redirect(lb.PostBackUrl);
+
+			string lb = b.Items[e.Index].Value;
+
+			Page.Response.Redirect(lb);
 			//Response.Redirect(b.Items[e.Index].);
 			
 		}

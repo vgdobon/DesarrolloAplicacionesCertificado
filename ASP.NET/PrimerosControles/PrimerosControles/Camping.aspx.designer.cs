@@ -51,15 +51,6 @@ namespace PrimerosControles
 		protected global::System.Web.UI.WebControls.TextBox CalendarSalida;
 
 		/// <summary>
-		/// Control mytable.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Table mytable;
-
-		/// <summary>
 		/// Control RadioBtn.
 		/// </summary>
 		/// <remarks>
