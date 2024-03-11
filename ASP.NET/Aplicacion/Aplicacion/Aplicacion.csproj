@@ -67,11 +67,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FormularioPersonalizado.aspx" />
     <Content Include="ProbarValidacion.aspx" />
     <Content Include="ProbarValidacion2.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormularioPersonalizado.aspx.cs">
+      <DependentUpon>FormularioPersonalizado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioPersonalizado.aspx.designer.cs">
+      <DependentUpon>FormularioPersonalizado.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProbarValidacion.aspx.cs">
       <DependentUpon>ProbarValidacion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

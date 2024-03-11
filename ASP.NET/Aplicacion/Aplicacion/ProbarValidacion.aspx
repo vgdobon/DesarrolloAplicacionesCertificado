@@ -16,7 +16,8 @@
                 <asp:RangeValidator ID="RangeValidatorNumero" runat="server" 
                     ErrorMessage="Número fuera de rango (de 1 a 10)"
                     ControlToValidate="txtNumero" Type="Integer"
-                    MinimumValue="5" MaximumValue="10" EnableClientScript="false"
+                    MinimumValue="5" MaximumValue="10" EnableClientScript="false" ForeColor="Red"
+                    Font-Bold="true"
                         >*</asp:RangeValidator>
                 <br />
                 <br />
@@ -25,10 +26,14 @@
                 <asp:TextBox ID="txtNoValidado" runat="server"></asp:TextBox>
             </p>
             <p>
-                <asp:Button ID="btnValidar" runat="server" Text="Enviar" OnClick="btnValidar_Click"/>
+                <asp:Button ID="btnValidar" runat="server" Text="Enviar" OnClick="btnValidar_Click"
+                    CausesValidation="true"/>
                 <br />
                 <asp:Label ID="lblResultado" runat="server" ForeColor="WhiteSmoke"
                     EnableViewState="false"></asp:Label>
+
+                <asp:Label ID="lblMensaje" runat="server" ForeColor="Tomato"
+    EnableViewState="false"></asp:Label>
             </p>
 
             <p>Hoy es viernes y mañana será sabado</p>

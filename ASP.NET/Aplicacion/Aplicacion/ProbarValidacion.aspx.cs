@@ -16,13 +16,36 @@ namespace Aplicacion
 
         protected void btnValidar_Click(object sender, EventArgs e)
         {
-			//Cancela el evento si la página no es válida
-			if (!Page.IsValid)
-			{
-				return;
-			}
+			string errorMessage = "<b>Errores encontrados: </b><br/>";
 
-			lblResultado.Text = "Has hecho click en el botón del Enviar";
+			bool pageIsValed = true;
+
+			//Buscar entre los controles de validación
+			//foreach (IValidator control in this.Controls.OfType<IValidator>())
+			foreach (BaseValidator control in this.Validators)			{
+				control.Validate();
+				if (!control.IsValid)
+				{
+					pageIsValed = false;
+					errorMessage += control.ErrorMessage + "<br/>";
+
+
+					TextBox tb = this.FindControl(control.ControlToValidate) as TextBox;
+
+					errorMessage += " * Problema con esta entrada: " + 
+									tb.Text + "<br/>";
+				}
+
+				if(!pageIsValed)
+				{
+					lblMensaje.Text = errorMessage;
+				}
+				else
+				{
+					lblMensaje.Text = "No hay errores";
+				}
+
+			}
         }
     }
 }
